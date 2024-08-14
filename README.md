@@ -22,6 +22,17 @@ Este projeto tem como objetivo implementar e visualizar a performance de diferen
 
 Deixe esta seção vazia por enquanto, pois será preenchida ao longo do desenvolvimento do projeto.
 
+# data visualization livraries in 2024
+--mathplotlib
+--seborn
+--bokeh
+--plotly.express <- parece o mais adequado
+    https://dash.plotly.com/tutorial
+--plotnine
+
+
 ```bash
 # Instalação das dependências
 # Comando para instalar as dependências
+
+
