@@ -3,6 +3,9 @@
 ## Descrição
 
 Este projeto tem como objetivo implementar e visualizar a performance de diferentes algoritmos de ordenação, utilizando multithreading para executar os algoritmos simultaneamente em diferentes threads. O objetivo final é permitir que qualquer pessoa clone este repositório e execute o projeto em sua própria máquina, podendo visualizar em tempo real a eficiência de cada algoritmo em diferentes condições.
+### Links de referencia
+1. [Historia e Teoria](https://en.wikipedia.org/wiki/Sorting_algorithm)
+2. [GeeksforGeeks](https://www.geeksforgeeks.org/sorting-algorithms/)
 
 ### Funcionalidades:
 
