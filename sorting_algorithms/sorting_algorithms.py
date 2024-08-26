@@ -16,3 +16,14 @@ def selection_sort_algorithm(list):
             aux_i += 1
         list[i], list[min_value_position] = list[min_value_position], list[i]
     return list
+
+# Algoritimo 2 - Bubble Sort Algorithm - O(n^2)
+def bubble_sort_algorit_algorithm(list):
+    
+    for i in range(len(list)):
+        for j in range(0, len(list) - i - 1):
+            
+            if list[j] > list[j + 1]:
+                list[j + 1], list[j] = list[j], list[j + 1]
+
+    return list
