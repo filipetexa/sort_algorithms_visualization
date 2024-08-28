@@ -1,4 +1,6 @@
 import random
+import time
+from functools import wraps
 
 # Definir parametros iniciais
 ARRAY_SIZE = 10
@@ -25,11 +27,34 @@ def generate_randon_array(array_size):
     return enumerate(arr)
 
 
-# Algoritimo 3 - Merge Sort Algorithm 
-def merge_sort_algorit_algorithm(list):
+
+def get_execution_time(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        # Inicia o cronômetro
+        start_time = time.time()
+        
+        # Executa a função original
+        result = func(*args, **kwargs)
+        
+        # Para o cronômetro
+        end_time = time.time()
+        
+        # Calcula o tempo de execução
+        execution_time = end_time - start_time
+        
+        return execution_time, result
     
-    return list
-            
+    return wrapper
+
+# Exemplo de uso
+@get_execution_time
+def funcao_exemplo(x):
+    # Exemplo de função que faz algo que leva tempo
+    time.sleep(x)
+    return x * 2
+
+
 # Cria o executor para trabalharmos com paralelismo
 # Chama as threds executoras para executor os algorimos de ordenação
 
