@@ -6,7 +6,6 @@ from functools import wraps
 ARRAY_SIZE = 10
 SAMPLE_RANGE = range(100000)
 
-
 """
 Instancia um Array de Array's randomicamete com base no parametro inicial
 O primeiro array vai ter 2 elementos o segundo 3 e o ultimo n, sendo n o parametro inical
@@ -25,8 +24,6 @@ def generate_randon_array(array_size):
         aux_arr = [random.choice(SAMPLE_RANGE) for _ in range(size + 2)]
         arr.append(aux_arr)
     return enumerate(arr)
-
-
 
 def get_execution_time(func):
     @wraps(func)
@@ -54,10 +51,8 @@ def funcao_exemplo(x):
     time.sleep(x)
     return x * 2
 
-
 # Cria o executor para trabalharmos com paralelismo
 # Chama as threds executoras para executor os algorimos de ordenação
-
 # Lista temporaria para testarmos o codigo do algoritimo aqui no arquivo main mesmo.
 test_list = [10,13,2,9,7]
 print(test_list)

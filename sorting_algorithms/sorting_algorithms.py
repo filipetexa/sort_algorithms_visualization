@@ -1,5 +1,4 @@
 
-
 # Algoritimo 1 - Selection Sort Algorithm - O(n log n)
 def selection_sort_algorithm(arr):
     min_value_position = 0
@@ -18,7 +17,7 @@ def selection_sort_algorithm(arr):
     return arr
 
 # Algoritimo 2 - Bubble Sort Algorithm - O(n^2)
-def bubble_sort_algorit_algorithm(arr):
+def bubble_sort_algorithm(arr):
     
     for i in range(len(arr)):
         for j in range(0, len(arr) - i - 1):
@@ -84,18 +83,22 @@ def merge_sort_algorithm(arr, left, right):
 """
 =============================================
 """
-def print_list(arr):
-    for i in arr:
-        print(i, end=" ")
-    print()
+# def print_list(arr):
+#     for i in arr:
+#         print(i, end=" ")
+#     print()
 
-# Driver code
-if __name__ == "__main__":
-    arr = [12, 11, 8, 13, 5, 6, 7]
-    print("Given array is")
-    print_list(arr)
+# # Driver code
+# if __name__ == "__main__":
+    # arr = [12, 11, 8, 13, 5, 6, 7]
+    # print("Given array is")
+    # print_list(arr)
 
-    merge_sort_algorithm(arr, 0, len(arr) - 1)
+    # merge_sort_algorithm(arr, 0, len(arr) - 1)
 
-    print("\nSorted array is")
-    print_list(arr)
+    # print("\nSorted array is")
+    # print_list(arr)
+    
+    # result = selection_sort_algorithm([10,9,8,7,6,5,4,3,2,1])
+    
+    
