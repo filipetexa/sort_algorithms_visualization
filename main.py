@@ -1,11 +1,16 @@
 import random
 import time
 from functools import wraps
+import sys
+
 
 # Definir parametros iniciais
 ARRAY_SIZE = 10
 SAMPLE_RANGE = range(100000)
 
+
+# Define um limit de recursao alto para que o merge sort não apresente stack overflow
+sys.setrecursionlimit(len(SAMPLE_RANGE)**2)
 """
 Instancia um Array de Array's randomicamete com base no parametro inicial
 O primeiro array vai ter 2 elementos o segundo 3 e o ultimo n, sendo n o parametro inical
