@@ -3,7 +3,7 @@
 def selection_sort_algorithm(arr):
     min_value_position = 0
     arr_size = len(arr) - 1
-    for i in enumerate(arr):
+    for i, item in enumerate(arr):
         aux_i = i + 1
         min_value_position = i
         while aux_i <= arr_size:
