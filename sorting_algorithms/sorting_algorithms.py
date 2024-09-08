@@ -78,6 +78,7 @@ def merge_sort_algorithm(arr, left, right):
         merge_sort_algorithm(arr, left, mid)
         merge_sort_algorithm(arr, mid + 1, right)
         merge(arr, left, mid, right)
+    return arr
 
 
 """
