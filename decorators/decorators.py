@@ -1,5 +1,6 @@
 from functools import wraps
 import time
+import csv
 
 def get_execution_time(func):   
 # # Exemplo de uso
@@ -23,8 +24,29 @@ def get_execution_time(func):
         # Calcula o tempo de execução
         execution_time = end_time - start_time
         
-        return execution_time, result
+        return {'execution_time': execution_time, 'result': result}
     return wrapper
 
-def write_results_on_csv_file(algorithm_name, arr_size, execution_time):
-    ...
+
+# escreve o resultado das funções em um arquivo csv
+def write_results_on_csv_file(file_path):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            data = func(*args, **kwargs)
+            
+            with open(file_path, 'a', newline='') as csvfile:
+                fieldnames = list(data.keys())
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                
+                # Verifica se o arquivo está vazio para escrever o cabeçalho
+                csvfile.seek(0, 2)  # Move para o final do arquivo
+                if csvfile.tell() == 0:
+                    writer.writeheader()
+
+                writer.writerow(data)
+            return data
+        return wrapper
+    return decorator
+
+# Inclui decoradors em funções e retorna uma instancia 'decorada' delas
