@@ -1,9 +1,15 @@
 import random
 import time
 import sys
+import os
 
 from sorting_algorithms.sorting_algorithms import *
 from copy import deepcopy
+
+from decorators.decorators import \
+apply_decorators_to_function, \
+write_results_on_csv_file, \
+get_execution_time
 
 # Definir parametros iniciais
 ARRAY_SIZE = 1000
@@ -39,11 +45,36 @@ randon_arr_sort = deepcopy(randon_arr)
 randon_arr_bubble = deepcopy(randon_arr) 
 randon_arr_merge = deepcopy(randon_arr)
 
+# Create output directory
+base_output_path = './output' 
+if not os.path.exists(base_output_path):
+    os.makedirs(base_output_path)
+
+
+# Create a decorated instance of the functions we need to use.
+decorated_selection_sort_algorithm = apply_decorators_to_function(
+    selection_sort_algorithm, 
+    (write_results_on_csv_file, f'{base_output_path}/selection_sort_output.csv' ),  # Add decorator that insert the results into the output file
+    get_execution_time  # Add decorator that gets the execution time 
+)
+
+decorated_bubble_sort_algorithm = apply_decorators_to_function(
+    bubble_sort_algorithm, 
+    (write_results_on_csv_file, f'{base_output_path}/bubble_sort_output.csv' ),  # Add decorator that insert the results into the output file
+    get_execution_time  # Add decorator that gets the execution time 
+)
+
+decorated_merge_sort_algorithm = apply_decorators_to_function(
+    merge_sort_algorithm, 
+    (write_results_on_csv_file, f'{base_output_path}/merge_sort_output.csv' ),  # Add decorator that insert the results into the output file
+    get_execution_time  # Add decorator that gets the execution time 
+)
 
 for arr in randon_arr:
-    print(selection_sort_algorithm(arr))
-    # bubble_sort_algorithm(arr)
-    # merge_sort_algorithm(arr)
+    decorated_selection_sort_algorithm(arr)
+    decorated_bubble_sort_algorithm(arr)
+    decorated_merge_sort_algorithm(arr, left=0, right= len(arr) - 1)
+
     
     
 # Call visualization function 
