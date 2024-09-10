@@ -2,7 +2,6 @@ from decorators.decorators import get_execution_time
 
 
 # Algoritimo 1 - Selection Sort Algorithm - O(n log n)
-@get_execution_time
 def selection_sort_algorithm(arr):
     min_value_position = 0
     arr_size = len(arr) - 1
@@ -20,7 +19,6 @@ def selection_sort_algorithm(arr):
     return arr
 
 # Algoritimo 2 - Bubble Sort Algorithm - O(n^2)
-@get_execution_time
 def bubble_sort_algorithm(arr):
     
     for i in range(len(arr)):
@@ -75,7 +73,6 @@ def merge(arr, left, mid, right):
         j += 1
         k += 1
         
-@get_execution_time
 def merge_sort_algorithm(arr, left, right):
     if left < right:
         mid = (left + right) // 2
