@@ -49,4 +49,12 @@ def write_results_on_csv_file(file_path):
         return wrapper
     return decorator
 
-# Inclui decoradors em funções e retorna uma instancia 'decorada' delas
+def apply_decorators_to_function(func, *decorators):
+    # Aplicar cada decorador em ordem inversa
+    for decorator in reversed(decorators):
+        if isinstance(decorator, tuple):  # Verifica se é um decorador parametrizado
+            func = decorator[0](*decorator[1:])(func)
+        else:  # Decorador simples
+            func = decorator(func)
+    return func
+
