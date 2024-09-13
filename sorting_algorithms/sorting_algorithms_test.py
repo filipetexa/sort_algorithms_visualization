@@ -14,14 +14,17 @@ test_set = [
 
 @pytest.mark.parametrize('arr, result', test_set)
 def test_sort_selection_algorithm(arr, result):
-    assert selection_sort_algorithm(arr) == result
+    result_len, sorted_arr = selection_sort_algorithm(arr)
+    assert sorted_arr == result
 
 @pytest.mark.parametrize('arr, result', test_set)
 def test_sort_bubble_algorithm(arr, result):
-    assert bubble_sort_algorithm(arr) == result
+    result_len, sorted_arr = bubble_sort_algorithm(arr)
+    assert sorted_arr == result
     
 @pytest.mark.parametrize('arr, result', test_set)
 def test_sort_merge_algorithm(arr, result):
     left = 0
-    right = len(arr) - 1 
-    assert merge_sort_algorithm(arr, left, right) == result
+    right = len(arr) - 1
+    result_len, sorted_arr = merge_sort_algorithm(arr, left, right)
+    assert sorted_arr == result

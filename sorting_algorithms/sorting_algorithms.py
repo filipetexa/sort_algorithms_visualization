@@ -16,7 +16,7 @@ def selection_sort_algorithm(arr):
             # aux_i ++
             aux_i += 1
         arr[i], arr[min_value_position] = arr[min_value_position], arr[i]
-    return arr
+    return len(arr), arr
 
 # Algoritimo 2 - Bubble Sort Algorithm - O(n^2)
 def bubble_sort_algorithm(arr):
@@ -27,7 +27,7 @@ def bubble_sort_algorithm(arr):
             if arr[j] > arr[j + 1]:
                 arr[j + 1], arr[j] = arr[j], arr[j + 1]
 
-    return arr
+    return len(arr), arr
 
 
 def merge(arr, left, mid, right):
@@ -80,7 +80,7 @@ def merge_sort_algorithm(arr, left, right):
         merge_sort_algorithm(arr, left, mid)
         merge_sort_algorithm(arr, mid + 1, right)
         merge(arr, left, mid, right)
-    return arr
+    return len(arr), arr
 
 
 """
