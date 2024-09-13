@@ -2,6 +2,7 @@ from functools import wraps
 import time
 import csv
 
+
 def get_execution_time(func):   
 # # Exemplo de uso
 # @get_execution_time
@@ -14,15 +15,14 @@ def get_execution_time(func):
     def wrapper(*args, **kwargs):
         # Inicia o cronômetro
         start_time = time.time()
-        
         # Executa a função original
         result = func(*args, **kwargs)
-        
         # Para o cronômetro
         end_time = time.time()
-        
         # Calcula o tempo de execução
         execution_time = end_time - start_time
+        # Arredonda para 3 casas decimais
+        execution_time = round(execution_time, 3)
         
         return {'execution_time': execution_time, 'result': result}
     return wrapper
