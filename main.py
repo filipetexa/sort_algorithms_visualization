@@ -5,6 +5,7 @@ import os
 
 from sorting_algorithms.sorting_algorithms import *
 from utils.array_functions import *
+from utils.file_managment_functions import *
 from copy import deepcopy
 
 from decorators.decorators import \
@@ -19,7 +20,7 @@ import pandas as pd
 import plotly.express as px
 
 # Definir parametros iniciais
-ARRAY_SIZE = 1000
+ARRAY_SIZE = 10000
 SAMPLE_RANGE = range(1000)
 
 # Define um limit de recursao alto para que o merge sort não apresente stack overflow
@@ -39,6 +40,7 @@ randon_arr_merge = deepcopy(randon_arr)
 base_output_path = './output' 
 if not os.path.exists(base_output_path):
     os.makedirs(base_output_path)
+delete_files_in_directory(base_output_path)
 
 
 # Create a decorated instance of the functions we need to use.
@@ -102,4 +104,4 @@ app.layout = [
     dcc.Graph(figure=px.line(dfs, x='array_size', y='execution_time', color='algorithm')),
 ]
 
-app.run(debug=False)
+app.run(debug=True)
