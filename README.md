@@ -18,24 +18,23 @@ Este projeto tem como objetivo implementar e visualizar a performance de diferen
 
 - `sorting_algorithms/`: Diretório onde estarão os algoritmos de ordenação implementados.
 - `visualization/`: Scripts e configurações para visualização dos tempos de execução em tempo real.
+- `decorators`: Diretorio com funções de decoração que ajudam a tornar as funções do codigo mais genericas
+- `utils`: Scripts com funções gerais
+- `Output`: Diretorio onde os resultados do script são salvos ( ele é criado automaticamente pelo script)
 - `main.py`: Script principal para iniciar a execução dos algoritmos e iniciar a visualização.
 - `requirements.txt`: Lista de dependências necessárias para executar o projeto.
 
-## Pré-requisitos
-
-Deixe esta seção vazia por enquanto, pois será preenchida ao longo do desenvolvimento do projeto.
-
-# data visualization livraries in 2024
---mathplotlib
---seborn
---bokeh
---plotly.express <- parece o mais adequado
+# data visualization
+--plotly.express 
     https://dash.plotly.com/tutorial
---plotnine
 
+
+## Instalação
+
+Clone o repositório e instale as dependências:
 
 ```bash
-# Instalação das dependências
-# Comando para instalar as dependências
-
+git clone https://github.com/filipetexa/sort_algorithms_visualization.git
+cd sort_algorithms_visualization
+pip install -r requirements.txt
 
